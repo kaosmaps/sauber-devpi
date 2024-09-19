@@ -5,7 +5,8 @@ import re
 
 def get_poetry_version():
     result = subprocess.run(["poetry", "--version"], capture_output=True, text=True)
-    return result.stdout.split()[2]
+    version = result.stdout.split()[2]
+    return version.strip("()")  # Strip parentheses
 
 
 def get_docker_version():
