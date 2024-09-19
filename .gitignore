@@ -1,0 +1,82 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+.venv/
+env/
+ENV/
+venv/
+
+# Poetry specific
+poetry.lock
+
+# Devpi related
+/root/.devpi/
+.devpi/
+root/pypi
+
+# macOS-specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon\r\r
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Docker specific
+*.log
+docker-compose.yml
+docker-compose.override.yml
+**/docker-compose.*.yml
+**/Dockerfile.*
+
+# Python environment and distribution files
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+noxfile_config.json
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# dotenv environment files
+.env
+.env.local
+.env.*.local
+
+README_files/
+README.html

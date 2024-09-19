@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "sauber-devpi"
+version = "0.1.0"
+description = "DevPi server"
+authors = ["Janko Thyson <janko@kaosmaps.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+devpi-server = "^6.12.1"
+devpi-web = "^4.2.2"
+docker = "^7.1.0"
+devpi-client = "^7.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+toml = "^0.10.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
