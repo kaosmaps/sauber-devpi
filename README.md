@@ -1,5 +1,6 @@
-# `sauber-devpi`
+# 🫧 `sauber-devpi`
 
+[![Version](https://img.shields.io/badge/version-0.1.1-brightgreen.svg)](https://github.com/your-repo-url)
 [![Status: Experimental](https://img.shields.io/badge/Status-Experimental-yellow.svg)](https://github.com/kaosmaps/sauber-devpi)
 [![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![Poetry](https://img.shields.io/badge/poetry-1.8.3-blue.svg)](https://python-poetry.org/)
@@ -7,7 +8,7 @@
 [![Docker](https://img.shields.io/badge/docker-27.2.0-blue.svg)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-⚙️ **sauber-devpi** is a fully Dockerized solution for setting up and running a DevPI server. It handles multiple user and index creation, and it is designed to be easily deployed on cloud platforms like Railway.
+**sauber-devpi** is a fully Dockerized solution for setting up and running a DevPI server. It handles multiple user and index creation, and it is designed to be easily deployed on cloud platforms like Railway.
 
 ## Features
 - Automated DevPI server setup

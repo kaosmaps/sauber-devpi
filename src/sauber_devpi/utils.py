@@ -31,10 +31,12 @@ def generate_badge_urls():
     devpi_version = pyproject["tool"]["poetry"]["dependencies"]["devpi-server"].replace(
         "^", ""
     )
+    package_version = pyproject["tool"]["poetry"]["version"]
     poetry_version = get_poetry_version()
     docker_version = get_docker_version()
 
     return {
+        "version": f"[![Version](https://img.shields.io/badge/version-{package_version}-brightgreen.svg)](https://github.com/your-repo-url)",
         "python": f"[![Python](https://img.shields.io/badge/python-{python_version}-blue.svg)](https://www.python.org/downloads/)",
         "poetry": f"[![Poetry](https://img.shields.io/badge/poetry-{poetry_version}-blue.svg)](https://python-poetry.org/)",
         "devpi": f"[![DevPI](https://img.shields.io/badge/DevPI-{devpi_version}-green.svg)](https://devpi.net/)",

@@ -36,20 +36,21 @@ RUN poetry install --no-dev
 EXPOSE ${PORT}
 
 # Set environment variables (optional, can be defined via .env)
-ENV DEVPI_USER=${DEVPI_USER}
-ENV DEVPI_PASSWORD=${DEVPI_PASSWORD}
-ENV DEVPI_KAOSMAPS_USER=${DEVPI_KAOSMAPS_USER}
-ENV DEVPI_KAOSMAPS_PASSWORD=${DEVPI_KAOSMAPS_PASSWORD}
-ENV DEVPI_INDEX=${DEVPI_INDEX}
-ENV PORT=${PORT}
+# ENV DEVPI_USER=${DEVPI_USER}
+# ENV DEVPI_PASSWORD=${DEVPI_PASSWORD}
+# ENV DEVPI_KAOSMAPS_USER=${DEVPI_KAOSMAPS_USER}
+# ENV DEVPI_KAOSMAPS_PASSWORD=${DEVPI_KAOSMAPS_PASSWORD}
+# ENV DEVPI_INDEX=${DEVPI_INDEX}
+# ENV PORT=${PORT}
+# ENV DEVPI_RESET_DATA=${DEVPI_RESET_DATA}
 
-# Echo environment variables for troubleshooting
-RUN echo "DEVPI_USER: ${DEVPI_USER}" && \
-    # echo "DEVPI_PASSWORD: ${DEVPI_PASSWORD}" && \
-    echo "DEVPI_KAOSMAPS_USER: ${DEVPI_KAOSMAPS_USER}" && \
-    # echo "DEVPI_KAOSMAPS_PASSWORD: ${DEVPI_KAOSMAPS_PASSWORD}" && \
-    echo "DEVPI_INDEX: ${DEVPI_INDEX}" && \
-    echo "PORT: ${PORT}"
+# # Echo environment variables for troubleshooting
+# RUN echo "DEVPI_USER: ${DEVPI_USER}" && \
+#     # echo "DEVPI_PASSWORD: ${DEVPI_PASSWORD}" && \
+#     echo "DEVPI_KAOSMAPS_USER: ${DEVPI_KAOSMAPS_USER}" && \
+#     # echo "DEVPI_KAOSMAPS_PASSWORD: ${DEVPI_KAOSMAPS_PASSWORD}" && \
+#     echo "DEVPI_INDEX: ${DEVPI_INDEX}" && \
+#     echo "PORT: ${PORT}"
 
 
 # Use poetry to run the application so the environment is correctly activated

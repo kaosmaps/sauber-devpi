@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sauber-devpi"
-version = "0.1.0"
+version = "0.1.1"
 description = "DevPi server"
 authors = ["Janko Thyson <janko@kaosmaps.com>"]
 license = "MIT"
