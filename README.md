@@ -2,8 +2,8 @@
 
 [![Status: Experimental](https://img.shields.io/badge/Status-Experimental-yellow.svg)](https://github.com/kaosmaps/sauber-devpi)
 [![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
-[![Poetry](https://img.shields.io/badge/poetry-1.8.3-blue.svg)](https://python-poetry.org/)
-[![DevPI](https://img.shields.io/badge/DevPI-6.12.1-green.svg)](https://devpi.net/)
+[![Poetry](https://img.shields.io/badge/poetry-1.8.3)-blue.svg)](https://python-poetry.org/)
+[![DevPI](https://img.shields.io/badge/DevPI-6.13.0-green.svg)](https://devpi.net/)
 [![Docker](https://img.shields.io/badge/docker-27.2.0-blue.svg)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -114,37 +114,65 @@ Usage:
 
 ### docker_run.sh
 
-This script runs the Docker container, loading environment variables from the `.env` file and exposing port 3141.
+This script runs the Docker container, loading environment variables from the `.env` file and exposing port 3142.
 
 Usage:
 ```
 ./scripts/docker_run.sh
 ```
 
-### devpi_admin.sh
+### devpi_railway_admin.sh
 
-This script logs in to the DevPI server as the admin user.
+This script logs in to the DevPI server as the admin user, creates the admin index if it doesn't exist, and optionally uploads packages.
 
 Usage:
 ```
-source ./scripts/export_env.sh
-./scripts/devpi_admin.sh
+./scripts/devpi_railway_admin.sh
 ```
 
-### devpi_kaosmaps.sh
+### devpi_railway_kaosmaps.sh
 
-This script helps interact with the kaosmaps index. It:
+This script helps interact with the kaosmaps index on the Railway-deployed server. It:
+- Logs in to the kaosmaps user
+- Creates the kaosmaps index if it doesn't exist
+- Optionally uploads packages to the index if a `pyproject.toml` file is present
+
+Usage:
+```
+./scripts/devpi_railway_kaosmaps.sh
+```
+
+### devpi_local_admin.sh
+
+This script logs in to the local DevPI server as the admin user.
+
+Usage:
+```
+./scripts/devpi_local_admin.sh
+```
+
+### devpi_local_kaosmaps.sh
+
+This script helps interact with the kaosmaps index on the local DevPI server. It:
 - Logs in to the kaosmaps user
 - Creates the kaosmaps index if it doesn't exist
 - Uploads packages to the index if a `pyproject.toml` file is present
 
 Usage:
 ```
-source ./scripts/export_env.sh
-./scripts/devpi_kaosmaps.sh
+./scripts/devpi_local_kaosmaps.sh
 ```
 
-Note: Make sure to run `source ./scripts/export_env.sh` before using the `devpi_admin.sh` and `devpi_kaosmaps.sh` scripts to ensure the necessary environment variables are set.
+### railway_deploy.sh
+
+This script deploys the project to Railway using the Railway CLI.
+
+Usage:
+```
+./scripts/dev/railway_deploy.sh
+```
+
+Note: Make sure to run `source ./scripts/export_env.sh` before using the DevPI-related scripts to ensure the necessary environment variables are set. For the Railway deployment script, ensure you have the Railway CLI installed and are logged in.
 
 ## Example Usage
 
@@ -156,11 +184,23 @@ pip install --index-url http://localhost:3141/<DEVPI_USER>/<DEVPI_INDEX>/simple 
 
 ## Deploying to Railway
 
-You can deploy this project to Railway or any cloud provider that supports Docker. Simply push this repository to your GitHub account, and follow the deployment instructions for Railway or your chosen cloud platform.
+This project is configured for easy deployment to Railway:
 
-1. Connect the repository to Railway.
-2. Set the environment variables in the Railway settings.
-3. Deploy!
+1. Fork this repository to your GitHub account.
+2. Connect your forked repository to Railway.
+3. Set the following environment variables in Railway:
+   - `DEVPI_USER`
+   - `DEVPI_PASSWORD`
+   - `DEVPI_KAOSMAPS_USER`
+   - `DEVPI_KAOSMAPS_PASSWORD`
+   - `DEVPI_INDEX`
+4. Railway will automatically deploy your app when you push changes to the main branch.
+
+For manual deployments, you can use the Railway CLI:
+
+```bash
+railway up
+```
 
 ## Contributing
 

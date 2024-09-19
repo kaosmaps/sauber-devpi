@@ -8,10 +8,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-devpi-server = "^6.12.1"
+devpi-server = "^6.13.0"
 devpi-web = "^4.2.2"
 docker = "^7.1.0"
 devpi-client = "^7.1.0"
+loguru = "^0.7.2"
 
 
 [tool.poetry.group.dev.dependencies]

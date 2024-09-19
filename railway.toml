@@ -1,0 +1,17 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "poetry run python -m sauber_devpi.main"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[envs.production]
+DEVPI_USER = "${DEVPI_USER}"
+DEVPI_PASSWORD = "${DEVPI_PASSWORD}"
+DEVPI_KAOSMAPS_USER = "${DEVPI_KAOSMAPS_USER}"
+DEVPI_KAOSMAPS_PASSWORD = "${DEVPI_KAOSMAPS_PASSWORD}"
+DEVPI_INDEX = "${DEVPI_INDEX}"

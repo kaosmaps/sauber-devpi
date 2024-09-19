@@ -31,13 +31,27 @@ COPY --from=builder /app /app
 # Activate poetry virtual environment on container start
 RUN poetry install --no-dev
 
-# Expose port for DevPI server
-EXPOSE 3141
+# Expose the port specified by the PORT environment variable
+# ENV PORT=3141
+EXPOSE ${PORT}
 
 # Set environment variables (optional, can be defined via .env)
-ENV DEVPI_USER=admin
-ENV DEVPI_PASSWORD=password
-ENV DEVPI_INDEX=dev
+ENV DEVPI_USER=${DEVPI_USER}
+ENV DEVPI_PASSWORD=${DEVPI_PASSWORD}
+ENV DEVPI_KAOSMAPS_USER=${DEVPI_KAOSMAPS_USER}
+ENV DEVPI_KAOSMAPS_PASSWORD=${DEVPI_KAOSMAPS_PASSWORD}
+ENV DEVPI_INDEX=${DEVPI_INDEX}
+ENV PORT=${PORT}
+
+# Echo environment variables for troubleshooting
+RUN echo "DEVPI_USER: ${DEVPI_USER}" && \
+    # echo "DEVPI_PASSWORD: ${DEVPI_PASSWORD}" && \
+    echo "DEVPI_KAOSMAPS_USER: ${DEVPI_KAOSMAPS_USER}" && \
+    # echo "DEVPI_KAOSMAPS_PASSWORD: ${DEVPI_KAOSMAPS_PASSWORD}" && \
+    echo "DEVPI_INDEX: ${DEVPI_INDEX}" && \
+    echo "PORT: ${PORT}"
+
 
 # Use poetry to run the application so the environment is correctly activated
 ENTRYPOINT ["poetry", "run", "python", "-m", "sauber_devpi.main"]
+# CMD ["poetry", "run", "python", "-m", "sauber_devpi.main"]
