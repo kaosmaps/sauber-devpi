@@ -2,7 +2,7 @@
 
 [![Status: Experimental](https://img.shields.io/badge/Status-Experimental-yellow.svg)](https://github.com/kaosmaps/sauber-devpi)
 [![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
-[![Poetry](https://img.shields.io/badge/poetry-1.8.3)-blue.svg)](https://python-poetry.org/)
+[![Poetry](https://img.shields.io/badge/poetry-1.8.3-blue.svg)](https://python-poetry.org/)
 [![DevPI](https://img.shields.io/badge/DevPI-6.13.0-green.svg)](https://devpi.net/)
 [![Docker](https://img.shields.io/badge/docker-27.2.0-blue.svg)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
